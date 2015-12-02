@@ -106,6 +106,7 @@ H5P.ImageHotspotQuestion = (function ($, Question) {
       this.setIntroduction(this.hotspotSettings.taskDescription);
     }
 
+    console.log("registering dom elements")
     // Register task content area
     this.setContent(this.createContent());
 
@@ -119,14 +120,24 @@ H5P.ImageHotspotQuestion = (function ($, Question) {
    */
   ImageHotspotQuestion.prototype.createContent = function () {
     var self = this;
+    var hasParent = false;
 
-
+    if (this.parent != undefined) {
+      hasParent = true;
+    }
+    
     this.$wrapper = $('<div>', {
       'class': 'image-hotspot-question'
     }).ready(function () {
+      if(!hasParent) {
+        var imageHeight = self.$wrapper.width() * (self.imageSettings.height / self.imageSettings.width);
+        self.$wrapper.css('height', imageHeight + 'px');
+      }
+    });
+    if(hasParent) {
       var imageHeight = self.$wrapper.width() * (self.imageSettings.height / self.imageSettings.width);
       self.$wrapper.css('height', imageHeight + 'px');
-    });
+    }
 
     this.$imageWrapper = $('<div>', {
       'class': 'image-wrapper'
