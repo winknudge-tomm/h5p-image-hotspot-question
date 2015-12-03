@@ -268,7 +268,14 @@ H5P.ImageHotspotQuestion = (function ($, Question) {
     if (!feedbackText) {
       feedbackText = '&nbsp;';
     }
-    this.setFeedback(feedbackText, this.score, this.maxScore);
+    // console.log("Seting feedback: ", feedbackText, this.score, this.maxScore);
+    var modalData = this.params.feedbackModal;
+    modalData.contentId = this.contentId;
+
+    // console.log(modalData)
+
+    // this.setFeedback(scoreText, score, maxScore, modalData);
+    this.setFeedback(feedbackText, this.score, this.maxScore, modalData);
 
     // Finally add fade in animation to hotspot feedback
     this.hotspotFeedback.$element.addClass('fade-in');
