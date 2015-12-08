@@ -106,7 +106,6 @@ H5P.ImageHotspotQuestion = (function ($, Question) {
       this.setIntroduction(this.hotspotSettings.taskDescription);
     }
 
-    console.log("registering dom elements")
     // Register task content area
     this.setContent(this.createContent());
 
