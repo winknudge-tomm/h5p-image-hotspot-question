@@ -291,7 +291,7 @@ H5P.ImageHotspotQuestion = (function ($, Question) {
 
     this.addButton('retry-button', 'Retry', function () {
       self.resetTask();
-    }, false);
+    }, false, this.params.buttonPosition);
   };
 
   /**

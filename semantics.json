@@ -114,6 +114,27 @@
     ]
   },
   {
+    "name": "buttonPosition",
+    "type": "group",
+    "label": "Button Position",
+    "description": "Position of the check / try again button etc",
+    "optional": true,
+    "fields": [
+      {
+        "name": "checkLocationX",
+        "type": "text",
+        "label": "x location of check button (px or %)",
+        "optional": true
+      },
+      {
+        "name": "checkLocationY",
+        "type": "text",
+        "label": "y location of check button (px or %)",
+        "optional": true
+      }
+    ]
+  },
+  {
     "name": "feedbackModal",
     "type": "group",
     "label": "Modal style feedback",
